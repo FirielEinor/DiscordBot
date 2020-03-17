@@ -1,12 +1,14 @@
 const ping = require('./ping');
 const eight_balls = require('./eight_balls');
 const music = require("./music");
+const random = require("./random")
 module.exports = execute;
 
 const commands = {
     ping,
     '8ball' : eight_balls,
-    'music' : music
+    'music' : music,
+    'randomducul' : random
   };
 
   const prefix= '!'

@@ -23,6 +23,7 @@
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.0.1",
     "opusscript": "0.0.7",
+    "random-word-fr": "^1.0.3",
     "ytdl-core-discord": "^1.1.0"
   }
 }
