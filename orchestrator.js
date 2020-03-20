@@ -1,10 +1,12 @@
-const ping = require('./ping');
+const ping = require('./ping').default;
 const eight_balls = require('./eight_balls');
+const sondage = require('./sondage');
 module.exports = execute;
 
 const commands = {
     ping,
-    '8ball' : eight_balls
+    '8ball' : eight_balls,
+    'sondage' : sondage
   };
 
   const prefix= '!'
