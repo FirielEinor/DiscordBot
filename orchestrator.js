@@ -1,6 +1,7 @@
 const ping = require('./ping').default;
 const eight_balls = require('./eight_balls');
 const sondage = require('./sondage');
+const random = require('./random.js');
 module.exports = execute;
 
 const commands = {
