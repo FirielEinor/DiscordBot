@@ -7,7 +7,8 @@ module.exports = execute;
 const commands = {
     ping,
     '8ball' : eight_balls,
-    'sondage' : sondage
+    'sondage' : sondage,
+    'randomducul' : random
   };
 
   const prefix= '!'
