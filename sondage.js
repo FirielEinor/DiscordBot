@@ -7,7 +7,7 @@ function execute(message) {
     poll.shift();
 
     if(poll.length > 6){
-        message.channel.send("Les sondages n'acceptent pas plus de 6 réponses ... Merci de réessayer")
+        message.channel.send("Les sondages n'acceptent pas plus de 6 réponses ... Merci de réessayer");
     }else{
         reply = "Un sondage a été initié par <@" + message.author.id + "> \n";
         reply = reply + label + "\n";
@@ -26,8 +26,8 @@ function execute(message) {
             reply = reply + pollReact[key] + " " + item + "\n";
         });
 
-        message.channel.send(reply)
-        .then( function(message) {
+        message.channel.send(reply) // we send the poll message ...
+        .then( function(message) { // ... and we react with the appropriate emojis
             poll.forEach(function(item, key){
                 message.react(pollReact[key]);
             });
