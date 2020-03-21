@@ -2,13 +2,17 @@ const ping = require('./ping').default;
 const eight_balls = require('./eight_balls');
 const sondage = require('./sondage');
 const random = require('./random.js');
+const role = require('./role.js');
+const roll = require('./roll');
 module.exports = execute;
 
 const commands = {
-    ping,
+    'ping' : ping,
     '8ball' : eight_balls,
     'sondage' : sondage,
-    'randomducul' : random
+    'randomducul' : random,
+    'role' : role,
+    'roll' : roll
   };
 
   const prefix= '!'
@@ -21,5 +25,5 @@ function execute(message) {
 
     if (Object.keys(commands).includes(command)) {
         commands[command](message);
-    }
+    }// TODO : add "I don't know that command" on a specific commit
 }
