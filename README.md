@@ -7,6 +7,7 @@
   * ping : pong
   * 8ball : answers all your question with precision
   * sondage : the poll function, it rocks
+  * roll : roll the dice and see what happens
 
 As you can see we already dealt with the essential functionnalities as one does.
 
