@@ -5,7 +5,8 @@
 ## Feature already accessible
   * random du cul : the fucntion that kicks ass ... litterally
   * ping : pong
-  * !sondage : the poll function, it rocks
+  * 8ball : answers all your question with precision
+  * sondage : the poll function, it rocks
 
 As you can see we already dealt with the essential functionnalities as one does.
 
