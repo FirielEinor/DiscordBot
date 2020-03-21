@@ -3,7 +3,7 @@
 *yet another casual bot for fun. Mainly french but eh, the doc is still accessible*
 
 ## Feature already accessible
-  * random du cul : the fucntion that kicks ass ... litterally
+  * random du cul : the function that kicks ass ... litterally
   * ping : pong
   * 8ball : answers all your question with precision
   * sondage : the poll function, it rocks
