@@ -17,3 +17,7 @@ As you can see we already dealt with the essential functionnalities as one does.
   * music playback
   * help function
   * ... (you name it)
+
+## To do list of all the other things we have to make
+
+  * activate per server a specific text salon where the bot operates only
