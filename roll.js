@@ -7,11 +7,12 @@ function execute(message) {
     option = args[0]; // we get the option of the command in a variable
     number = args[1]; // number of time we run the command
     reply = " \"Le maître du jeu lance ses dés d'un geste solennel ...\"\n";
+    let total = 0;
 
     if(option < 1 || option >100 || !parseInt(option, 10)){ // Si le nombre sur le dé n'a pas été choisi entre 1 et 100
             message.channel.send("veuillez choisir un nombre maximum sur le(s) dé(s) compris entre 1 et 100\n _!roll [ nombre max sur le dé ] [ nombre de dés ]_");
     }else{
-        if ( typeof number === !'undefined'){ // if something more has been passed
+        if ( typeof number !== 'undefined'){ // if something more has been passed
             if(number > 15 || number < 1 || !parseInt(number, 15)){ // and this thing is not a number between 1 and 15
                 message.channel.send("veuillez choisir un nombre de dés compris entre 1 et 15\n _!roll [ nombre max sur le dé ] [ nombre de dés ]_");
             }else{ // we loop as many times as the number of dices
