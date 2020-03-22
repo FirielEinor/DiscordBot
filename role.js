@@ -18,12 +18,10 @@ function execute(message) {
     
     // let's start by checking the arguments are correct (roles exist)
     var errorMessage = "Les rôles que vous avez choisi n'existent pas sur ce serveur (";
-    var roleErrors = 0;
 	args.forEach(function(item, key){
         tempRole = message.guild.roles.cache.find(role => role.name == item);
         if(tempRole == null){
-            errorMessage += " " + item + " ";
-            roleErrors ++;
+            errorMessage += " " + item + " "; //si le role temporaire n'existe pas, on va indiquer que le role demander n'existe pas
         }else{
             roles.push(tempRole);
         }
