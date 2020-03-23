@@ -1,6 +1,5 @@
 'use strict';
 module.exports = execute;
-const Discord = require('discord.js');
 const operator = "!role ";
 const fs = require('fs');
 
@@ -17,17 +16,10 @@ function execute(message) {
     var reply = "";
     var user = message.member;
     var errorList = ""; // This is the list of the roles that return an error
-    let listRoles = null;
-    if (fs.existsSync('roles.json')){ // This is the white list of roles users can actually use
-        var rawdata = fs.readFileSync('roles.json');
-        listRoles = new Discord.Collection(JSON.parse(rawdata));
-    }
-
-
-
     if (option != "ajouter" && option != "supprimer"){
         message.channel.send("veuillez choisir l'option \"ajouter\" ou \"supprimer\" puis la liste des rôles à modifier");return;
     }
+
     if(tableRoles.length <= 0){
         message.channel.send("Veuillez indiquer au moins un rôle à modifier"); return;
     }
@@ -43,8 +35,6 @@ function execute(message) {
         if(tempRole == null){ // first we check the role exists on the server
                 message.channel.send("Le rôle **" + item + "** n'existe pas sur ce serveur, faites une demande aux admins !\n");
                 roleErrors ++;
-        }else if(listRoles != null && listRoles.find(role => role.name == item ) == null){
-            message.channel.send("Vous ne pouvez pas vous attribuer le rôle **" + item + "**\n");
         }else{
             manageRoles.push(tempRole); //we add the temporary role in the role list
         }
