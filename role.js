@@ -21,7 +21,6 @@ function execute(message) {
     if (fs.existsSync('roles.json')){ // This is the white list of roles users can actually use
         var rawdata = fs.readFileSync('roles.json');
         listRoles = new Discord.Collection(JSON.parse(rawdata));
-        console.log(listRoles);
     }
 
 
@@ -74,6 +73,7 @@ function execute(message) {
                     .catch((error) => { // this is in case the bot doesn't have permission to add the role
                         setTimeout(function(){
                             message.channel.send("Impossible de vous ajouter au role **" + item.name + "**\n");
+                            console.error(error);
                             console.error(user.user.username + " tried to add role " + item.name);
                         }, 50);
                     });
@@ -105,6 +105,7 @@ function execute(message) {
                     .catch(() => { // this is in case the bot doesn't have permission to add the role
                         setTimeout(function(){
                             message.channel.send("Impossible de vous enlever le role **" + item.name + "**\n");
+                            console.error(error);
                             console.error(user.user.username + " tried to delete role " + item.name);
                         }, 50);
                     });
