@@ -21,7 +21,7 @@ function execute(message) {
                     message.channel.send("Vous avez été supprimé.e du rôle **" + item.name + "**\n");
                 })
                 .catch((error) => { // this is in case the bot doesn't have permission to add the role
-                    message.channel.send("Vous avez été supprimé.e du rôle **" + item.name + "**\n");
+                    message.channel.send("Erreur : Impossible de vous supprimer du rôle **" + item.name + "**\n");
                 });
         }
     });
