@@ -1,0 +1,27 @@
+[
+    ["League of Legend", 
+        {
+            "id" : "Lego-Legend", 
+            "name" : "League of Legends"
+        }],
+    ["Guild Wars 2", 
+        {
+            "id" : "GW2", 
+            "name" : "Guild Wars 2"
+        }],
+    ["Rocket League", 
+        {
+            "id" : "La Ligue des Fusées", 
+            "name" : "Rocket League"
+        }],
+    ["Monster Hunter World", 
+        {
+            "id" : "Chasseur de Monstres", 
+            "name" : "Monster Hunter World"
+        }],
+    ["Clash", 
+        {
+            "id" : "LA BAGARRE", 
+            "name" : "Clash"
+        }]
+]

@@ -1,65 +1,120 @@
+'use strict';
 module.exports = execute;
+const Discord = require('discord.js');
 const operator = "!role ";
+const fs = require('fs');
 
 function execute(message) {
-    command = message.content.slice(operator.length,message.content.length);
-    var args = command.split(" "); // array made of the options and the arguments of the command
-    var option = args[0]; // we get the option of the command in a variable
+    var command = message.content.slice(operator.length,message.content.length);
+    var option = command.substr(0,command.indexOf(' '));// we put the option of the command in a variable
+    var table = command.substr(command.indexOf(' ')+1);// we get the arguments of the command in a variable
+    var table = table.split(","); // we separate all the arguments in a table
+    var tableRoles = [];
+    table.forEach(function(item, key){ // we trim all role asked by the user
+        item = item.trim();
+        tableRoles.push(item);
+    });
     var reply = "";
     var user = message.member;
     var errorList = ""; // This is the list of the roles that return an error
+    let listRoles = null;
+    if (fs.existsSync('roles.json')){ // This is the white list of roles users can actually use
+        var rawdata = fs.readFileSync('roles.json');
+        listRoles = new Discord.Collection(JSON.parse(rawdata));
+        console.log(listRoles);
+    }
+
+
 
     if (option != "ajouter" && option != "supprimer"){
         message.channel.send("veuillez choisir l'option \"ajouter\" ou \"supprimer\" puis la liste des rôles à modifier");return;
     }
-    args.shift(); // we delete the option of the array so the arguments only remain
-    if(args.length <= 0){
+    if(tableRoles.length <= 0){
         message.channel.send("Veuillez indiquer au moins un rôle à modifier"); return;
     }
-    let roles = []; // empty array ton contain the roles to add or delete on the user
+
+
     
     // let's start by checking the arguments are correct (roles exist)
+    let manageRoles = []; // empty array ton contain the roles to add or delete on the user
     var roleErrors = 0;
-	args.forEach(function(item, key){
+    var tempRole = null;
+    tableRoles.forEach(function(item, key){
         tempRole = message.guild.roles.cache.find(role => role.name == item);
-        if(tempRole == null){
-            reply += "Le rôle **" + item + "** que vous avez choisi n'existe pas sur ce serveur";
-            roleErrors ++;
+        if(tempRole == null){ // first we check the role exists on the server
+                message.channel.send("Le rôle **" + item + "** n'existe pas sur ce serveur, faites une demande aux admins !\n");
+                roleErrors ++;
+        }else if(listRoles != null && listRoles.find(role => role.name == item ) == null){
+            message.channel.send("Vous ne pouvez pas vous attribuer le rôle **" + item + "**\n");
         }else{
-            roles.push(tempRole); // on ajoute le role temporaire dans la liste des rôles à traiter
+            manageRoles.push(tempRole); //we add the temporary role in the role list
         }
     });
+
+
 
     // TODO : change this in different functions ?
 	switch (option) {
 		case 'ajouter' :
-            roles.forEach(function (item, key){
-                member = item.members.find(guildMember => guildMember.id == user.id);
-                // member is undefined when the user doesn't have the role yet
+            manageRoles.forEach(function (item, key){
+                var member = item.members.find(guildMember => guildMember.id == user.id);
+                // member is undefined when the user doesn't have the role 
 
-                // we check that the user doesn't have yet the role
                 if ( member != undefined){ 
                     errorList += item.name + " " ;
                 }else{
-                    addRole = message.member.roles.add(item) //we add the user to the role members
-                    .then(() => {
-                        reply += "Vous avez été ajouté.e au rôle **" + item.name + "** !\n";
+                    var permissionError = false;
+                    message.member.roles.add(item) //we add the user to the role members
+                    .then((value) => {
+                        setTimeout(function(){
+                            message.channel.send("Vous avez été ajouté.e au rôle **" + item.name + "** !\n");
+                            return;
+                        }, 50);
                     })
-                    .catch(() => { // this is in case the bot doesn't have permission to add the role
-                        //reply += "Impossible de vous ajouter au role **" + item.name + "**\n";
-                        console.error(user.user.username + " tried to add role " + item.name);
+                    .catch((error) => { // this is in case the bot doesn't have permission to add the role
+                        setTimeout(function(){
+                            message.channel.send("Impossible de vous ajouter au role **" + item.name + "**\n");
+                            console.error(user.user.username + " tried to add role " + item.name);
+                        }, 50);
                     });
                 }
             });
             if (errorList != ""){
-                reply += "Les rôles suivants vous ont déjà été attribués : **" + errorList + "**\n";
+                reply += "Les rôles suivants vous sont déjà attribués : **" + errorList + "**\n";
+                message.channel.send(reply);
             }
-            message.channel.send(reply);
-			break;
-		case 'supprimer' :
+            break;
+            
 
+
+		case 'supprimer' :
+            manageRoles.forEach(function (item, key){
+                var member = item.members.find(guildMember => guildMember.id == user.id);
+                // member is undefined when the user doesn't have the role 
+
+                // we check that the user doesn't have yet the role
+                if ( member == undefined){ 
+                    errorList += item.name + " " ;
+                }else{
+                    message.member.roles.remove(item) //we add the user to the role members
+                    .then(() => {
+                        setTimeout(function(){
+                            message.channel.send("Vous avez été supprimé.e du rôle **" + item.name + "**\n");
+                        }, 50);
+                    })
+                    .catch(() => { // this is in case the bot doesn't have permission to add the role
+                        setTimeout(function(){
+                            message.channel.send("Impossible de vous enlever le role **" + item.name + "**\n");
+                            console.error(user.user.username + " tried to delete role " + item.name);
+                        }, 50);
+                    });
+                }
+            });
+            if (errorList != ""){
+                reply += "Les rôles suivants ne vous sont pas attribués : **" + errorList + "**\n";
+                message.channel.send(reply);
+            }
 			break;
 		default :
-
-	}
+    }
 }
