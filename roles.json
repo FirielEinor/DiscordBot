@@ -23,5 +23,20 @@
         {
             "id" : "LA BAGARRE", 
             "name" : "Clash"
-        }]
+        }],
+    ["Blade and Soul",
+     {
+         "id" : "L'ame et la Lame",
+         "name" : "Blade and Soul"
+     }],
+        ["Dofus",
+     {
+         "id" : "Des oeufs",
+         "name" : "Dofus"
+     }],
+        ["Battle Royale",
+     {
+         "id" : "Tous les BR",
+         "name" : "Battle Royale"
+     }]  
 ]
