@@ -2,7 +2,10 @@ const ping = require('./ping').default;
 const eight_balls = require('./eight_balls');
 const sondage = require('./sondage');
 const random = require('./random.js');
-const role = require('./role.js');
+const addrole = require('./role/addrole.js');
+const delrole = require('./role/delrole.js');
+const setrole = require('./role/setrole.js');
+const unsetrole = require('./role/unsetrole.js');
 const roll = require('./roll');
 module.exports = execute;
 
@@ -11,7 +14,10 @@ const commands = {
     '8ball' : eight_balls,
     'sondage' : sondage,
     'randomducul' : random,
-    'role' : role,
+    'addrole' : addrole,
+    'delrole' : delrole,
+    'setrole' : setrole,
+    'unsetrole' : unsetrole,
     'roll' : roll
   };
 
