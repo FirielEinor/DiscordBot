@@ -6,7 +6,7 @@ function execute(message) {
     args = command.split(" "); // array made of the options and the arguments of the command
     option = args[0]; // we get the option of the command in a variable
     number = args[1]; // number of time we run the command
-    reply = " \"Le maître du jeu lance ses dés d'un geste solennel ...\"\n";
+    reply = "";
     let total = 0;
 
     if(option < 1 || option >100 || !parseInt(option, 10)){ // Si le nombre sur le dé n'a pas été choisi entre 1 et 100
