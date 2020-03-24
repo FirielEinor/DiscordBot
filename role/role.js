@@ -17,7 +17,7 @@ function getRoles(message) {
     let roles = []; // empty array to contain the roles to add or delete on the user
 
     if (tableRoles[0].toLowerCase() == "!" + command) {
-        message.channel.send("Veuillez indiquer au moins un rôle à modifier"); 
+        message.channel.send("Veuillez indiquer au moins un rôle à modifier");
         return roles;
     }
 
@@ -26,16 +26,19 @@ function getRoles(message) {
     var reply = "";
 
     tableRoles.forEach(function (item, key) {
+        if(item == ""){
+            return;
+        }
         tempRole = message.guild.roles.cache.find(role => role.name == item);
         if (tempRole == null) { // first we check the role exists on the server
             reply += "Le rôle **" + item + "** n'existe pas sur ce serveur, faites une demande aux admins !\n";
-            errorRole ++;
+            errorRole++;
         } else {
             roles.push(tempRole); //we add the temporary role in the role list
         }
     });
 
-    if(errorRole){
+    if (errorRole) {
         message.channel.send(reply);
     }
 
