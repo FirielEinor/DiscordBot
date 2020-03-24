@@ -6,6 +6,7 @@ const addrole = require('./role/addrole.js');
 const delrole = require('./role/delrole.js');
 const setrole = require('./role/setrole.js');
 const unsetrole = require('./role/unsetrole.js');
+const listroles = require('./role/listroles.js');
 const roll = require('./roll');
 module.exports = execute;
 
@@ -18,6 +19,7 @@ const commands = {
     'delrole' : delrole,
     'setrole' : setrole,
     'unsetrole' : unsetrole,
+    'listroles' : listroles,
     'roll' : roll
   };
 

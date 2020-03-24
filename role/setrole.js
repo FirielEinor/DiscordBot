@@ -18,7 +18,7 @@ function execute(message) {
         } else {
             await message.member.roles.add(item) //we add the user to the role members
                 .then(() => {
-                    message.channel.send("Vous avez été ajouté.e au rôle **" + item.name + "** !\n");
+                    message.channel.send("Vous avez été ajouté.e au rôle **" + item.name + "** \n");
                 })
                 .catch((error) => { // this is in case the bot doesn't have permission to add the role
                     message.channel.send("Erreur : Impossible de vous ajouter au role **" + item.name + "**\n");
