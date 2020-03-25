@@ -57,10 +57,15 @@ function listRoles(message, client) {
         if (item.members.find(member => member.id == userID) != null && item.rawPosition > botMaxPosition){
             botMaxPosition = item.rawPosition;
         }
+        console.log(item.managed);
     });
 
     // We display all roles that are below the bot in hierarchy
     allRoles.forEach((item,key) => {
+        if(item.managed == true){
+            delete allRoles[key];
+            return;
+        }
         if(item.rawPosition < botMaxPosition && item.rawPosition != 0){
             listDisplayRoles += "\n    - **" + item.name + "**";
         }
