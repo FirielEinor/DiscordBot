@@ -1,5 +1,5 @@
 module.exports = execute;
 
-function execute(message, roles) {
+function execute(message, client) {
 
 }

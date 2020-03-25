@@ -2,9 +2,9 @@ const roleUtils = require('./role.js');
 
 module.exports = execute;
 
-function execute(message) {
+function execute(message, client){
     var reply = "";
-    var roles = roleUtils.getRoles(message);
+    var roles = roleUtils.getRoles(message, client);
     if (roles.length == 0) {
         return;
     }
