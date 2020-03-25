@@ -3,9 +3,12 @@ const operator = "!roll ";
 
 function execute(message) {
     command = message.content.slice(operator.length,message.content.length);
-    args = command.split(" "); // array made of the options and the arguments of the command
-    option = args[0]; // we get the option of the command in a variable
-    number = args[1]; // number of time we run the command
+    var myStr = command.replace(/ +/g, ' ');
+    args = myStr.trim().split(" "); // array made of the options and the arguments of the command
+    option = args[0].trim(); // we get the option of the command in a variable
+    number = args[1].trim(); // number of time we run the command
+    console.log("option :" + option);
+    console.log("number : " + number);
     reply = "";
     let total = 0;
 
