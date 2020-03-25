@@ -1,5 +1,5 @@
 exports.getRoles = getRoles;
-exports.listRoles = listRoles;
+exports.listRoles = listRole;
 
 const prefix = '!';
 
@@ -17,7 +17,7 @@ function getRoles(message, client) {
 
     if (tableRoles[0].toLowerCase() == "!" + command) {
         //message.channel.send("Veuillez indiquer au moins un rôle à modifier");
-        listRoles(message, client);
+        listRole(message, client);
         return [] ;
     }
 
@@ -46,7 +46,7 @@ function getRoles(message, client) {
 
 }
 
-function listRoles(message, client) {
+function listRole(message, client) {
     var userID = client.user.id;
     var allRoles = message.guild.roles.cache;
     var botMaxPosition = 0;
@@ -57,7 +57,6 @@ function listRoles(message, client) {
         if (item.members.find(member => member.id == userID) != null && item.rawPosition > botMaxPosition){
             botMaxPosition = item.rawPosition;
         }
-        console.log(item.managed);
     });
 
     // We display all roles that are below the bot in hierarchy

@@ -1,0 +1,35 @@
+{
+    "setrole": {
+        "text": "setrole\ncommande : *!setrole [ role 1 ], [ role 2 ], ..., [ role X ]*\n Vous permet de vous attribuer un role parmis ceux autorisés sur le serveur."
+    },
+    "unsetrole": {
+        "text": "unsetrole\ncommande: *!unsetrole [ role 1 ], [ role 2 ], ..., [ role X ]*\n Vous permet de vous retirer un role précédemment attribué."
+    },
+    "addrole": {
+        "text": "commande à venir"
+    },
+    "delrole": {
+        "text": "commande à venir"
+    },
+    "listrole": {
+        "text": "listrole\ncommande : *!listrole*\n Affiche la liste des roles quil est possible de s'attribuer / de se retirer."
+    },
+    "help": {
+        "text": "help\ncommande : *!help [ commande (help par défaut) ]*\n Vous permet d'afficher le menu d'aide général si vous ne précisez pas de commande, ou l'aide de la commande précisée."
+    },
+    "randomducul": {
+        "text": "randomDuCuL\ncommande : *!randomducul*\n Litérallement un truc aléatoire DU CUL. Des questions ?"
+    },
+    "roll": {
+        "text": "roll\ncommande : *!roll [ nombre max sur le dé ] [ nombre de dés (1 par défaut) ]*\n Lance un ou plusieurs dés et affiche la somme. Maximum 15 dés !"
+    },
+    "sondage": {
+        "text": "sondage\ncommande : *!sondage [ intitulé du sondage ] ; [ réponse 1 ] ;  [ réponse 2 ] ; ... ; [ répone X ]*\n Affiche un sondage avec X réponses possible et permet à tous les utilisateurs du channel de répondre par emoji réaction. Maximum 6 réponses !"
+    },
+    "8ball": {
+        "text": "8ball\ncommande : *!8ball [ votre question existentielle ]*\n Répond à toutes vos questions existentielles. Oui oui, vraiment, toutes."
+    },
+    "default": {
+        "text": "Voici la liste des commandes disponibles. Pour en apprendre plus, utiliser la commande help [ commande souhaitée ]  \n - setrole \n - unsetrole \n - addrole \n - delrole \n - listrole \n - help \n - randomducul \n - roll \n - 8ball \n - sondage"
+    }
+}

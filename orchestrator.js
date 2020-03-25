@@ -6,8 +6,9 @@ const addrole = require('./role/addrole.js');
 const delrole = require('./role/delrole.js');
 const setrole = require('./role/setrole.js');
 const unsetrole = require('./role/unsetrole.js');
-const listroles = require('./role/listroles.js');
-const roll = require('./roll');
+const listrole = require('./role/listrole.js');
+const roll = require('./roll.js');
+const help = require('./help.js');
 module.exports = execute;
 
 const commands = {
@@ -19,8 +20,9 @@ const commands = {
     'delrole' : delrole,
     'setrole' : setrole,
     'unsetrole' : unsetrole,
-    'listroles' : listroles,
-    'roll' : roll
+    'listroles' : listrole,
+    'roll' : roll,
+    'help' : help
   };
 
   const prefix= '!'
