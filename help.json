@@ -30,6 +30,6 @@
         "text": "**8ball**\ncommande : *!8ball [ votre question existentielle ]*\n Répond à toutes vos questions existentielles. Oui oui, vraiment, toutes."
     },
     "default": {
-        "text": "Voici la liste des commandes disponibles. Pour en apprendre plus, utiliser la commande *!help [ commande souhaitée ]*  \n - **setrole** \n - **unsetrole** \n - **addrole** \n - **delrole** \n - **listrole** \n - **help** \n - **randomducul** \n - **roll** \n - **8ball** \n - **sondage**"
+        "text": "Voici la liste des commandes disponibles. Pour en apprendre plus, utiliser la commande *!help [ commande souhaitée ]*  \n - **setrole** : vous ajoute un rôle \n - **unsetrole** : vous enlève un rôle \n - **addrole** : commande à venir \n - **delrole** : commande à venir \n - **listrole** : liste les rôles que vous pouvez vous attribuer / enlever \n - **help** : cette commande d'aide \n - **randomducul** : oui. \n - **roll** : lance un dé \n - **8ball** : répond aux questions \n - **sondage** : lance un sondage avec plusieurs réponses possibles"
     }
 }
