@@ -12,7 +12,7 @@ function execute(message) {
         item = item.trim();
         poll[key] = item;
     })
-    
+
     if (poll.length > 10) {
         message.channel.send("Les sondages n'acceptent pas plus de 10 réponses ... Merci de réessayer");
     } else {
@@ -34,5 +34,6 @@ function execute(message) {
                 });
             })
             .catch(console.error());
+        message.delete();
     }
 }
