@@ -25,13 +25,13 @@ const commands = {
 
   const prefix= '!'
 
-function execute(message) {
+function execute(message, client) {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(' ', 1);
     const command = args.shift().toLowerCase();
 
     if (Object.keys(commands).includes(command)) {
-        commands[command](message);
+        commands[command](message, client);
     }// TODO : add "I don't know that command" on a specific commit
 }

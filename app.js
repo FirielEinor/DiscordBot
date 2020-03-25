@@ -11,7 +11,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    orchestrator(message);
+    orchestrator(message, client);
 })
 
 console.log(process.env.BOT_TOKEN);
