@@ -1,7 +1,11 @@
 exports.getRoles = getRoles;
-exports.listRoles = listRole;
+exports.listRole = listRole;
 
 const prefix = '!';
+
+String.prototype.cleanup = function () {
+    return this.replace(/[^a-zA-Z0-9 +]+/g, "").trim();
+}
 
 
 function getRoles(message, client) {
@@ -24,9 +28,6 @@ function getRoles(message, client) {
     var tempRole = null; // to contain the potential roles on the server
     var errorRole = 0;
     var reply = "";
-    String.prototype.cleanup = function () {
-        return this.replace(/[^a-zA-Z0-9 +]+/g, "").trim();
-    }
 
     tableRoles.forEach(function (item, key) {
         if (item == "") {
@@ -69,7 +70,7 @@ function listRole(message, client) {
             return;
         }
         if (item.rawPosition < botMaxPosition && item.rawPosition != 0) {
-            listDisplayRoles += "\n    - **" + item.name + "**";
+            listDisplayRoles += "\n    - **" + item.name.cleanup() + "**";
         }
     });
 

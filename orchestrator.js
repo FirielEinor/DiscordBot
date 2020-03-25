@@ -20,7 +20,7 @@ const commands = {
     'delrole' : delrole,
     'setrole' : setrole,
     'unsetrole' : unsetrole,
-    'listroles' : listrole,
+    'listrole' : listrole,
     'roll' : roll,
     'help' : help
   };
