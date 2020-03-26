@@ -10,9 +10,9 @@ function execute(message) {
     number = args[1].trim(); // number of time we run the command
 =======
     if (args[1] != undefined) {
-        var number = args[1].trim()
+        var number = args[1].trim();
     } else {
-        var number = undefined; //number of time we run the command
+        var number = args[1];
     }
 
 
