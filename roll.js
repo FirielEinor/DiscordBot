@@ -11,6 +11,9 @@ function execute(message) {
     } else {
         var number = undefined; //number of time we run the command
     }
+
+
+
     reply = "";
     let total = 0;
 
