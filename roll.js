@@ -6,18 +6,11 @@ function execute(message) {
     var myStr = command.replace(/ +/g, ' ');
     args = myStr.trim().split(" "); // array made of the options and the arguments of the command
     option = args[0].trim(); // we get the option of the command in a variable
-<<<<<<< HEAD
-    number = args[1].trim(); // number of time we run the command
-=======
     if (args[1] != undefined) {
         var number = args[1].trim();
     } else {
         var number = args[1];
     }
-
-
-
->>>>>>> Nemo
     reply = "";
     let total = 0;
 
