@@ -7,9 +7,9 @@ function execute(message) {
     args = myStr.trim().split(" "); // array made of the options and the arguments of the command
     option = args[0].trim(); // we get the option of the command in a variable
     if (args[1] != undefined) {
-        var number = args[1].trim()
+        var number = args[1].trim();
     } else {
-        var number = undefined; //number of time we run the command
+        var number = args[1];
     }
 
 
