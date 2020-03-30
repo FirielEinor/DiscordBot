@@ -24,7 +24,7 @@
         "text": "**roll**\ncommande : *!roll [ nombre max sur le dé ] [ nombre de dés (1 par défaut) ]*\n Lance un ou plusieurs dés et affiche la somme. Maximum 15 dés !"
     },
     "sondage": {
-        "text": "**sondage**\ncommande : *!sondage [ intitulé du sondage ] ; [ réponse 1 ] ;  [ réponse 2 ] ; ... ; [ répone X ]*\n Affiche un sondage avec X réponses possible et permet à tous les utilisateurs du channel de répondre par emoji réaction. Maximum 6 réponses !"
+        "text": "**sondage**\ncommande : *!sondage [ intitulé du sondage ] ; [ réponse 1 ] ;  [ réponse 2 ] ; ... ; [ réponse X ]*\n Affiche un sondage avec X réponses possibles et permet à tous les utilisateurs du channel de répondre par emoji réaction. Maximum 6 réponses !"
     },
     "8ball": {
         "text": "**8ball**\ncommande : *!8ball [ votre question existentielle ]*\n Répond à toutes vos questions existentielles. Oui oui, vraiment, toutes."
