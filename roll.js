@@ -3,8 +3,7 @@ const operator = "!roll ";
 
 function execute(message) {
     command = message.content.slice(operator.length, message.content.length);
-    var myStr = command.replace(/ +/g, ' ');
-    args = myStr.trim().split(" "); // array made of the options and the arguments of the command
+    args = command.trim().split(" "); // array made of the options and the arguments of the command
     option = args[0].trim(); // we get the option of the command in a variable
     if (args[1] != undefined) {
         var number = args[1].trim();

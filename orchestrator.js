@@ -34,6 +34,7 @@ function execute(message, client) {
 
     const args = message.content.slice(prefix.length).split(' ', 1);
     const command = args.shift().toLowerCase();
+    message.content = message.content.replace(/ +/g, ' ');
 
     if (Object.keys(commands).includes(command)) {
         commands[command](message, client);
