@@ -8,15 +8,15 @@
   * ping : pong
   * 8ball : answers all your question with precision
   * sondage : the poll function, it rocks
-  * roll : roll the dice and see what happens
+  * roll : roll the dice and see what happens  
+  * help function
+ 
 
 As you can see we already dealt with the essential functionnalities as one does.
 
 ## Feature yet to be achieved
 
-  * roles attribution
   * music playback
-  * help function
   * ... (you name it)
 
 ## To do list of all the other things we have to make
