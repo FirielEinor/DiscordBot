@@ -1,7 +1,7 @@
 exports.getRoles = getRoles;
 exports.listRole = listRole;
 
-const prefix = '!';
+const utils = require('../command.js');
 
 String.prototype.cleanup = function () {
     return this.replace(/[^a-zA-Z0-9 +]+/g, "").trim();
@@ -10,8 +10,11 @@ String.prototype.cleanup = function () {
 
 function getRoles(message, client) {
 
-    const args = message.content.slice(prefix.length).split(' ', 1);
-    const command = args.shift().toLowerCase();
+    //const args = message.content.slice(prefix.length).split(' ', 1);
+    //const command = args.shift().toLowerCase();
+
+    const args = utils.getArgs(message, ' ');
+    const command = utils.getCommand(message);
     var tableRoles = message.content.substr(message.content.indexOf(' ') + 1).split(","); // we separate all the arguments in a table
     tableRoles.forEach(function (item, key) { // we trim all role asked by the user
         item = item.trim();
