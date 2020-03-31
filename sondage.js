@@ -1,10 +1,10 @@
 module.exports = execute;
+const utils = require('./command.js');
 
 function execute(message) {
-    text = message.content.slice(9, message.content.length);
-    poll = text.split(";"); // array made of the question and the answers to the poll
-    label = poll[0].trim(); // we get the introduction of the poll to display further
-    poll.shift(); // we delete the label of the array so the answers only remain
+    poll = utils.getArgs(message, ';'); // array made of the question and the answers to the poll
+    label = poll.shift().trim(); // we get the introduction of the poll to display further
+     // we delete the label of the array so the answers only remain
     poll.forEach(function (item, key) {
         if (item == "" || /^[ ]{1,}$/.test(item)) {
             delete poll[key]; return;

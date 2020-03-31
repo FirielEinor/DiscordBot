@@ -1,4 +1,4 @@
-const ping = require('./ping').default;
+const ping = require('./ping');
 const eight_balls = require('./eight_balls');
 const sondage = require('./sondage');
 const random = require('./random.js');
@@ -10,6 +10,7 @@ const listrole = require('./role/listrole.js');
 const listmembers = require('./role/listmembers.js');
 const roll = require('./roll.js');
 const help = require('./help.js');
+const utils = require('./command.js');
 module.exports = execute;
 
 const commands = {
@@ -31,10 +32,9 @@ const commands = {
 
 function execute(message, client) {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-    const args = message.content.slice(prefix.length).split(' ', 1);
-    const command = args.shift().toLowerCase();
     message.content = message.content.replace(/ +/g, ' ');
+
+    const command = utils.getCommand(message);
 
     if (Object.keys(commands).includes(command)) {
         commands[command](message, client);
