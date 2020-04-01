@@ -15,7 +15,7 @@ const responses = [
     "Je demanderais à ma maman.",
     "Elle a dit non !",
     "Dans une certaine mesure.",
-    "Avec l'accord de ton pédiatre !",
+    "Avec l'accord du pédiatre !",
     "Seulement si tu te laves les mains.",
     "Vous pouvez répéter la question ?",
     "Bon sang, mais c'est bien sûr !",
