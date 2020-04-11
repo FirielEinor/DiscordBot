@@ -22,17 +22,17 @@ function execute(message) {
             } else { // we loop as many times as the number of dices
                 let total = 0; // this is to make the total of the amounts on all dices
                 for (let index = 0; index < number; index++) {
-                    dice = 1 + Math.floor(Math.random() * (dice - 1 + 1));
-                    total += dice;
-                    reply += " 🎲 **" + dice + "** ";
+                    roll = 1 + Math.floor(Math.random() * (dice));
+                    total += roll;
+                    reply += " 🎲 **" + roll + "** ";
                 }
                 reply += "          *total de* **" + total + "**";
                 message.channel.send(reply); // we return the dices and the total
             }
         } else {
-            dice = 1 + Math.floor(Math.random() * (dice - 1 + 1));
-            total += dice;
-            reply += " 🎲 **" + dice + "** ";
+            roll = 1 + Math.floor(Math.random() * (dice - 1 + 1));
+            total += roll;
+            reply += " 🎲 **" + roll + "** ";
             message.channel.send(reply); // we return the dice
         }
     }

@@ -13,9 +13,9 @@ function getRoles(message, client) {
     //const args = message.content.slice(prefix.length).split(' ', 1);
     //const command = args.shift().toLowerCase();
 
-    const args = utils.getArgs(message, ' ');
+    const tableRoles = utils.getArgs(message, ' ');
     const command = utils.getCommand(message);
-    var tableRoles = message.content.substr(message.content.indexOf(' ') + 1).split(","); // we separate all the arguments in a table
+    //var tableRoles = message.content.substr(message.content.indexOf(' ') + 1).split(","); // we separate all the arguments in a table
     tableRoles.forEach(function (item, key) { // we trim all role asked by the user
         item = item.trim();
         tableRoles[key] = item;

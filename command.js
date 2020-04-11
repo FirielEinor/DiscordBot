@@ -5,10 +5,13 @@ const prefix = '!';
 
 function getArgs(message, separator = null) {
     var command = getCommand(message);
-    var args = message.content.substr(command.length + 2);
+    var text = message.content.substr(command.length + 2);
+    var args = [];
     if (separator != null) {
-        args = args.split(separator);
+        args = text.split(separator);
+    return args;
     }
+    args.push(text);
     return args;
 }
 
