@@ -14,15 +14,15 @@ function execute(message) {
     const command = utils.getCommand(message);
     var roleAsked = utils.getArgs(message);
 
-    if (roleAsked == "") {
+    if (roleAsked[0] == "") {
         message.channel.send("Veuillez indiquer au moins un role pour en afficher la liste de membres");
         return;
     }
 
-    tempRole = serverRoles.find(role => role.name.cleanup() == roleAsked);
+    tempRole = serverRoles.find(role => role.name.cleanup() == roleAsked[0]);
 
     if (tempRole == null) {
-        message.channel.send("Le rôle **" + roleAsked + "** n'existe pas sur ce serveur\nPour afficher les roles, utilisez la commande **!listrole**");
+        message.channel.send("Le rôle **" + roleAsked[0] + "** n'existe pas sur ce serveur\nPour afficher les roles, utilisez la commande **!listrole**");
         return;
     }
 
