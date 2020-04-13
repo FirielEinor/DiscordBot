@@ -9,9 +9,12 @@ function getArgs(message, separator = null) {
     var args = [];
     if (separator != null) {
         args = text.split(separator);
-    return args;
+        args.forEach(function(item, key) {
+            args[key] = item.trim();
+        });
+        return args;
     }
-    args.push(text);
+    args.push(text.trim());
     return args;
 }
 
