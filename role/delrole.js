@@ -12,4 +12,5 @@ async function execute(message) {
 
     roleExists.delete();
     message.channel.send("Le rôle **" + args[0] + "** a bien été supprimé");
+    return;
 }
