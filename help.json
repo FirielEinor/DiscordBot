@@ -17,9 +17,6 @@
     "help": {
         "text": "**help**\ncommande : *!help [ commande (help par défaut) ]*\n Vous permet d'afficher le menu d'aide général si vous ne précisez pas de commande, ou l'aide de la commande précisée."
     },
-    "randomducul": {
-        "text": "**randomDuCuL**\ncommande : *!randomducul*\n Litérallement un truc aléatoire DU CUL. Des questions ?"
-    },
     "roll": {
         "text": "**roll**\ncommande : *!roll [ nombre max sur le dé ] [ nombre de dés (1 par défaut) ]*\n Lance un ou plusieurs dés et affiche la somme. Maximum 15 dés !"
     },
