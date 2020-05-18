@@ -1,4 +1,5 @@
 #  Discord key  #
 #################
-*.env
-roles.json
+/*.env
+/roles.json
+
