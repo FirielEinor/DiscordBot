@@ -1,6 +1,7 @@
 const ping = require('./ping');
 const eight_balls = require('./eight_balls');
 const sondage = require('./sondage');
+const dire = require('./say.js');
 const random = require('./random.js');
 const addrole = require('./role/addrole.js');
 const delrole = require('./role/delrole.js');
@@ -25,7 +26,8 @@ const commands = {
     'listrole' : listrole,
     'roll' : roll,
     'help' : help,
-    'listmembers' : listmembers
+    'listmembers' : listmembers,
+    'dire' : dire
   };
 
   const prefix= '!'
