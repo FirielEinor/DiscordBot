@@ -9,7 +9,6 @@ var ongoingww = [];
  * Second argument is the waiting time before the wordwar.
 **/
 function execute (message, client) {
-    console.log(ongoingww);
     if (ongoingww.includes(message.author.id)){
         message.channel.send("<@" + message.author.id +"> a déjà une wordwar en cours, merci de patienter pour en relancer une nouvelle !")
         return;
@@ -43,10 +42,7 @@ function execute (message, client) {
                             participantTab += '\n La wordwar est maintenant terminée, merci d\'y avoir participé \!';
                             message.channel.send(participantTab);
                             }, wwtimer * 60000);
-                        index = ongoingww.indexOf(message.author.id);
-                        if (index > -1) {
-                            ongoingww.splice(index, 1);
-                        }
+                        ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
                 }, wwdelay * 60000);
             });
     }
