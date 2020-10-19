@@ -69,15 +69,15 @@ function execute (message, client) {
                     users.forEach(element => {
                         participantStart += '<@' + element.id + '> '
                     });
-                    message.channel.send(participantStart + "\nLa wordwar initiée par <@" + authorid + "> commence. Vous pouvez toujours la rejoindre si vous le désirez. Bonne chance à tou.te.s !!")
+                    message.channel.send("\nLa wordwar initiée par <@" + authorid + "> commence. Vous pouvez toujours la rejoindre si vous le désirez. Bonne chance à tou.te.s !!\n" + participantStart)
                         var participantTab = [];
                         setTimeout(function(){
+                            participantTab += 'La wordwar initiée par <@' + authorid + '> est maintenant terminée, merci d\'y avoir participé \!\n';
                             reaction = message.reactions.cache.find(r => r.name = '✅');
                             users = reaction.users.cache;
                             users.forEach(element => {
                                 participantTab += '<@' + element.id + '> '
                             });
-                            participantTab += '\n La wordwar initiée par <@' + authorid + '> est maintenant terminée, merci d\'y avoir participé \!';
                             message.channel.send(participantTab);
                             }, wwtimer * 60000);
                         ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
