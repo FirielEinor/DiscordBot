@@ -26,7 +26,10 @@
     "8ball": {
         "text": "**8ball**\ncommande : *!8ball [ votre question existentielle ]*\n Répond à toutes vos questions existentielles. Oui oui, vraiment, toutes."
     },
+    "wordwar": {
+        "text": "**wordwar**\ncommande : *!wordwar [ 1 - 30 minutes de durée (20min par défaut) ] [ 1 - 15 minutes d'attente avant la wordwar pour laisser le temps aux gens de s'inscrire (2min par défaut) ]* \n Si vous ignorez ce qu'est une wordwar, demandez autour de vous. Les nanoteurs vous expliqueront bien mieux que ce bon vieux Billy."
+    },
     "default": {
-        "text": "Voici la liste des commandes disponibles. Pour en apprendre plus, utiliser la commande *!help [ commande souhaitée ]*  \n - **setrole** : vous ajoute un rôle \n - **unsetrole** : vous enlève un rôle \n - **addrole** : commande à venir \n - **delrole** : commande à venir \n - **listrole** : liste les rôles que vous pouvez vous attribuer / enlever \n - **help** : cette commande d'aide \n - **roll** : lance un dé \n - **8ball** : répond aux questions \n - **sondage** : lance un sondage avec plusieurs réponses possibles"
+        "text": "Voici la liste des commandes disponibles. Pour en apprendre plus, utiliser la commande *!help [ commande souhaitée ]*  \n - **setrole** : vous ajoute un rôle \n - **unsetrole** : vous enlève un rôle \n - **addrole** : commande à venir \n - **delrole** : commande à venir \n - **listrole** : liste les rôles que vous pouvez vous attribuer / enlever \n - **help** : cette commande d'aide \n - **roll** : lance un dé \n - **8ball** : répond aux questions \n - **sondage** : lance un sondage avec plusieurs réponses possibles \n - **wordwar** : lance une wordwar de 20min après 2min d'attente par défaut"
     }
 }
