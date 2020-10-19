@@ -15,35 +15,72 @@ function execute (message, client) {
     }else{
         ongoingww.push(message.author.id);
         args = utils.getArgs(message, ' ');
-        if(args[0] != null){
-            wwtimer = args[0];
-        }else{
-            wwtimer = 20; // Default duration time of a ww is 20 minutes
+        if(args.length == 0){
+                wwtimer = 20; // Default duration time of a ww is 20 minutes
+                wwdelay = 2; // Default waiting time before a ww is 2 minutes
+        } else {
+            if(isNormalInteger(args[0])){
+                if(args[0] > 30){
+                    message.channel.send("Le temps d'une wordwar ne peux pas excéder **30 minutes** sur ce channel. Merci de réessayer !");
+                    ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
+                    return;
+                }else if(args[0] < 1){
+                    message.channel.send("Le temps d'une wordwar ne peux pas être inférieur à **1 minute** sur ce channel. Merci de réessayer !")
+                    ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
+                    return;
+                }
+                wwtimer = args[0];
+            }else{
+                message.channel.send("Le temps d'une wordwar doit être un entier positif compris entre **1 minute** et **30 minutes**. Merci de réessayer !")
+                ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
+                return;
+            }            //  && Number.isInteger(args[1])
+            if(args[1] != null){
+                if(isNormalInteger(args[1])){
+                    if(args[0] > 15){
+                        message.channel.send("Le temps d'attente d'une wordwar ne peux pas excéder **10 minutes** sur ce channel. Merci de réessayer !");
+                        ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
+                        return;
+                    }else if(args[0] < 1){
+                        message.channel.send("Le temps d'attente d'une wordwar ne peux pas être inférieur à **1 minute** sur ce channel. Merci de réessayer !")
+                        ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
+                        return;
+                    }
+                    wwdelay = args[1];
+                }else{
+                    message.channel.send("Le temps d'attente d'une wordwar doit être un entier positif compris entre **1 minute** et **15 minutes**. Merci de réessayer !")
+                    ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
+                    return;
+                }
+            }else{
+                wwdelay = 2;
+            }
         }
-        if(args[1] != null){
-            wwdelay = args[1];
-        }else{
-            wwdelay = 2; // Default waiting time before a ww is 2 minutes
-        }
+        //  && Number.isInteger(args[0])
 
+        authorid = message.author.id;
         message.channel.send("Une wordwar a été initiée par <@" + message.author.id + "> . Elle commencera dans " + wwdelay + " minutes et durera " + wwtimer + " minutes.\nCliquez sur l'emote de réaction pour y prendre part. Si vous ne désirez plus y participer, il vous suffit d'enlever votre réaction.")
             .then(function(message){
                 message.react('✅');
                 setTimeout(()=> {
-                    message.channel.send("La wordwar commence. Vous pouvez toujours la rejoindre si vous le désirez. Bonne chance à tou.te.s !!")
+                    message.channel.send("La wordwar initiée par <@" + authorid + "> commence. Vous pouvez toujours la rejoindre si vous le désirez. Bonne chance à tou.te.s !!")
                         var participantTab = [];
                         setTimeout(function(){
                             reaction = message.reactions.cache.find(r => r.name = '✅');
-
                             users = reaction.users.cache;
                             users.forEach(element => {
                                 participantTab += '<@' + element.id + '> '
                             });
-                            participantTab += '\n La wordwar est maintenant terminée, merci d\'y avoir participé \!';
+                            participantTab += '\n La wordwar initiée par <@' + authorid + '> est maintenant terminée, merci d\'y avoir participé \!';
                             message.channel.send(participantTab);
                             }, wwtimer * 60000);
                         ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
                 }, wwdelay * 60000);
             });
     }
+}
+
+function isNormalInteger(str) {
+    var n = Math.floor(Number(str));
+    return n !== Infinity && String(n) === str && n >= 0;
 }

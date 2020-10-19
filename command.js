@@ -12,9 +12,15 @@ function getArgs(message, separator = null) {
         args.forEach(function(item, key) {
             args[key] = item.trim();
         });
+        if (args.length == 1 && args[0] == ''){
+            return [];
+        }
         return args;
     }
     args.push(text.trim());
+    if (args.length == 1 && args[0] == ''){
+        return [];
+    }
     return args;
 }
 
