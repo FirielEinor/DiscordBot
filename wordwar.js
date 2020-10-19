@@ -63,7 +63,13 @@ function execute (message, client) {
             .then(function(message){
                 message.react('✅');
                 setTimeout(()=> {
-                    message.channel.send("La wordwar initiée par <@" + authorid + "> commence. Vous pouvez toujours la rejoindre si vous le désirez. Bonne chance à tou.te.s !!")
+                    reaction = message.reactions.cache.find(r => r.name = '✅');
+                    users = reaction.users.cache;
+                    var participantStart = "";
+                    users.forEach(element => {
+                        participantStart += '<@' + element.id + '> '
+                    });
+                    message.channel.send(participantStart + "\nLa wordwar initiée par <@" + authorid + "> commence. Vous pouvez toujours la rejoindre si vous le désirez. Bonne chance à tou.te.s !!")
                         var participantTab = [];
                         setTimeout(function(){
                             reaction = message.reactions.cache.find(r => r.name = '✅');
