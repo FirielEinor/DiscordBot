@@ -6,10 +6,10 @@
         "text": "**unsetrole**\ncommande: *!unsetrole [ role 1 ], [ role 2 ], ..., [ role X ]*\n Vous permet de vous retirer un role précédemment attribué."
     },
     "addrole": {
-        "text": "commande à venir"
+        "text": "**addrole**\ncommande: *!addrole [ nom du role ] ; [ raison du role (mais pourquoi faire ?) ] ; [ couleur du role (anglais ou RGB) ]*\n Pour ajouter un rôle au serveur, avec des jolis couleurs ..."
     },
     "delrole": {
-        "text": "commande à venir"
+        "text": "**delrole**\ncommande: *!delrole [ nom du role ]*\n Pour supprimer un role, à utiliser AVEC PRECAUTIONS !"
     },
     "listrole": {
         "text": "**listrole**\ncommande : *!listrole*\n Affiche la liste des roles quil est possible de s'attribuer / de se retirer."
