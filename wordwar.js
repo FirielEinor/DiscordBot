@@ -37,11 +37,11 @@ function execute (message, client) {
             }            //  && Number.isInteger(args[1])
             if(args[1] != null){
                 if(isNormalInteger(args[1])){
-                    if(args[0] > 15){
-                        message.channel.send("Le temps d'attente d'une wordwar ne peux pas excéder **10 minutes** sur ce channel. Merci de réessayer !");
+                    if(args[1] > 15){
+                        message.channel.send("Le temps d'attente d'une wordwar ne peux pas excéder **15 minutes** sur ce channel. Merci de réessayer !");
                         ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
                         return;
-                    }else if(args[0] < 1){
+                    }else if(args[1] < 1){
                         message.channel.send("Le temps d'attente d'une wordwar ne peux pas être inférieur à **1 minute** sur ce channel. Merci de réessayer !")
                         ongoingww.splice(ongoingww.indexOf(message.author.id), 1);
                         return;
