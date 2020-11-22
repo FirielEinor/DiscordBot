@@ -12,6 +12,7 @@ const listmembers = require('./role/listmembers.js');
 const roll = require('./roll.js');
 const help = require('./help.js');
 const wordwar = require('./wordwar.js');
+const music = require('./music.js');
 const utils = require('./command.js');
 module.exports = execute;
 
@@ -29,7 +30,8 @@ const commands = {
     'help' : help,
     'listmembers' : listmembers,
     'dire' : dire,
-    'wordwar' : wordwar
+    'wordwar' : wordwar,
+    'music' : music
   };
 
   const prefix= '!'
