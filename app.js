@@ -7,7 +7,7 @@ const orchestrator = require('./orchestrator');
 
 
 client.once('ready', () => {
-	console.log('Ready!');
+	console.log('Bonjour Nemo ! Je suis prêt !');
 });
 
 client.on('message', message => {
